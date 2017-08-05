@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>音响播放系统</title>
+  <script src="/msr/MediaStreamRecorder.js"></script>
+  <script src="/vue/dist/vue.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      font-family: "PingFang SC";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .楼底, .输液室, .药房 {
+      border: solid 1px #aaa;
+      width: 350px;
+      height: 300px;
+      display: inline-flex;
+      justify-content: center;
+      flex-direction: column;
+      margin: 0 .5em;
+      align-items: center;
+      font-size: 4vw;
+      color: #aaa;
+      border-radius: 12px;
+      cursor: default;
+      transition: all .1s;
+    }
+
+    #app > a > b {
+      display: block;
+      font-size: 50%;
+      font-weight: 100;
+    }
+
+    #app > a:hover {
+      border-color: darkcyan;
+      box-shadow: 0 0 0 5px darkcyan, inset 0 .2em .5em darkcyan;
+      color: darkcyan;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <a @click="download">下载</a>
+  <a @click="stopRecording">停止</a>
+  <a class="楼底" @mousedown="startRecording('楼底')">
+    楼底
+    <b>按住说话</b>
+  </a>
+  <a class="输液室">
+    输液室
+    <b>按住说话</b>
+  </a>
+  <a class="药房">
+    药房
+    <b>按住说话</b>
+  </a>
+</div>
+
+<script src="/index.js"></script>
+</body>
+</html>
